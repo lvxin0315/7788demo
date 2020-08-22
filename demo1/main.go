@@ -184,5 +184,8 @@ func main() {
 	vBox.Children = append(vBox.Children, btn)
 	//把内容放到窗口
 	window.SetContent(vBox)
+
+	//启动
+	defer window.Close()
 	window.ShowAndRun()
 }
