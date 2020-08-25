@@ -1,5 +1,8 @@
-# elastic - golang 的 elasticsearch 客户端
+# elastic -- golang 的 elasticsearch 客户端
 
+## demo5
+1. elastic.NewRawStringQuery() 手写查询条件，可以使用must should ……
+2. elastic.NewMultiMatchQuery() 代码构建组合查询条件，所有字段都会计算积分. 
 
 ## 小结
 1. matchQuery与termQuery区别：
