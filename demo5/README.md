@@ -3,6 +3,8 @@
 ## demo5
 1. elastic.NewRawStringQuery() 手写查询条件，可以使用must should ……
 2. elastic.NewMultiMatchQuery() 代码构建组合查询条件，所有字段都会计算积分. 
+3. main.go addGoods() 函数是将item.txt内容导入到elasticsearch中，仅demo初始化时使用，不要问内容哪来的
+4. main.go deleteIndex() 函数删除elasticsearch中的index，调试时使用
 
 ## 小结
 1. matchQuery与termQuery区别：

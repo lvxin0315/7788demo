@@ -111,7 +111,7 @@ func main() {
 	}
 
 	//TODO 为了方便调试，删除index
-	//_, _ = client.DeleteIndex(indexKey).Do(ctx)
+	//deleteIndex(client, ctx)
 }
 
 //利用item.txt批量添加demo数据
@@ -131,4 +131,9 @@ func addGoods(client *elastic.Client, ctx context.Context) {
 		_, _ = client.Index().Index(indexKey).BodyJson(g).Do(ctx)
 		fmt.Println(i, "：", g.Title, g.BrandName, " over")
 	}
+}
+
+//删除index
+func deleteIndex(client *elastic.Client, ctx context.Context) {
+	_, _ = client.DeleteIndex(indexKey).Do(ctx)
 }
