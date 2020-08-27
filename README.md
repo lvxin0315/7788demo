@@ -5,6 +5,7 @@
 - demo3: golang -- 动态库 (.so)
 - demo4: GoJieba是"结巴"中文分词的Golang语言版本
 - demo5: elastic -- golang 的 elasticsearch 客户端
+- demo5: goquery -- html内容解析
 
 
 #### TODO 

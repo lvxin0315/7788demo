@@ -32,7 +32,7 @@ var indexKey = "goods-item"
 func main() {
 	ctx := context.Background()
 	client, err := elastic.NewClient(
-		elastic.SetURL("http://localhost:9200"),
+		elastic.SetURL("http://172.16.0.203:9200"),
 		//由于我的elastic使用的docker单节点安装，所以禁用
 		//sniff为true时，客户端会去嗅探整个集群的状态，把集群中其它机器的ip地址加到客户端中
 		elastic.SetSniff(false))
@@ -40,7 +40,7 @@ func main() {
 		panic(err)
 	}
 	//查看version
-	version, _ := client.ElasticsearchVersion("http://localhost:9200")
+	version, _ := client.ElasticsearchVersion("http://172.16.0.203:9200")
 	fmt.Println("version:", version)
 	//判断index是不是存在
 	exists, err := client.IndexExists(indexKey).Do(ctx)
@@ -56,7 +56,7 @@ func main() {
 		}
 	}
 	//TODO 添加数据
-	//addGoods(client, ctx)
+	addGoods(client, ctx)
 
 	//TODO 查询方式
 	//查询条件,MatchQuery 计算积分的单字段
