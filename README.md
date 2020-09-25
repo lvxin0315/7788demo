@@ -6,6 +6,8 @@
 - demo4: GoJieba是"结巴"中文分词的Golang语言版本
 - demo5: elastic -- golang 的 elasticsearch 客户端
 - demo6: goquery -- html内容解析
+- demo7: golang 在docker 里面运行
+- demo8: golang使用RabbitMQ
 
 
 #### TODO 

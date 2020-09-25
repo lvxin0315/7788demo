@@ -9,5 +9,6 @@ require (
 	github.com/jinzhu/gorm v1.9.16
 	github.com/olivere/elastic/v7 v7.0.19
 	github.com/panjf2000/ants/v2 v2.4.1
+	github.com/streadway/amqp v1.0.0
 	github.com/yanyiwu/gojieba v1.1.2
 )
