@@ -8,7 +8,7 @@
 - demo6: goquery -- html内容解析
 - demo7: golang 在docker 里面运行
 - demo8: golang使用RabbitMQ
-- demo9: gorm操作
+- demo9: gorm操作 //TODO
 - demo10: golang使用剪切板
 
 
