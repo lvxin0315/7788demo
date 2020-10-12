@@ -5,6 +5,8 @@ go 1.14
 require (
 	fyne.io/fyne v1.3.3
 	github.com/PuerkitoBio/goquery v1.5.1
+	github.com/asticode/go-astikit v0.9.1
+	github.com/asticode/go-astilectron v0.17.0
 	github.com/atotto/clipboard v0.1.2
 	github.com/fedesog/webdriver v0.0.0-20180606182539-99f36c92eaef
 	github.com/go-vgo/robotgo v0.90.3 // indirect
