@@ -10,6 +10,10 @@
 - demo8: golang使用RabbitMQ
 - demo9: gorm操作 //TODO
 - demo10: golang使用剪切板
+- demo11: TODO
+- demo12: golang使用剪切板
+- demo13: socket.io
+- demo14: 正常服务器信息查询
 
 
 #### TODO 
