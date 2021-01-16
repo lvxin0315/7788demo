@@ -43,6 +43,10 @@ func main() {
 
 	//3.回调操作效果
 	addPcTestData(db)
+
+	//测试
+	testCurl(db)
+
 	//防止程序退出
 	select {}
 }
@@ -104,5 +108,37 @@ func addPcTestData(db *gorm.DB) {
 		if err != nil {
 			fmt.Println(err)
 		}
+	}
+}
+
+//循环一套
+func testCurl(db *gorm.DB) {
+	rand.Seed(time.Now().UnixNano())
+	i := 1000000
+	for true {
+		i++
+		productModel := model.Product{
+			Code:  fmt.Sprintf("code-%d-%d", time.Now().Unix(), i),
+			Price: uint(rand.Intn(100000)),
+		}
+		//insert
+		err := db.Save(&productModel).Error
+		if err != nil {
+			fmt.Println(err)
+		}
+		time.Sleep(10 * time.Millisecond)
+		//update
+		productModel.Price = uint(rand.Intn(100000))
+		err = db.Save(&productModel).Error
+		if err != nil {
+			fmt.Println(err)
+		}
+		time.Sleep(10 * time.Millisecond)
+		//delete
+		err = db.Delete(&productModel).Error
+		if err != nil {
+			fmt.Println(err)
+		}
+		time.Sleep(10 * time.Millisecond)
 	}
 }

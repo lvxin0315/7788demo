@@ -16,6 +16,7 @@ require (
 	github.com/panjf2000/ants/v2 v2.4.1
 	github.com/shirou/gopsutil v3.20.10+incompatible // indirect
 	github.com/shirou/gopsutil/v3 v3.20.10
+	github.com/siddontang/go-mysql v1.1.0
 	github.com/streadway/amqp v1.0.0
 	github.com/yanyiwu/gojieba v1.1.2
 	gogs.1hok.cn/wkr/jcc_unit_test_api v0.0.0-20201112023159-1899da4f984e // indirect
