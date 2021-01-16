@@ -11,9 +11,10 @@
 - demo9: gorm操作 //TODO
 - demo10: golang使用剪切板
 - demo11: TODO
-- demo12: golang使用剪切板
+- demo12: golang解答应用题
 - demo13: socket.io
 - demo14: 正常服务器信息查询
+- demo15: mysql binlog
 
 
 #### TODO 
