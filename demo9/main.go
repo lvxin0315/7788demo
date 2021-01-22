@@ -126,19 +126,19 @@ func testCurl(db *gorm.DB) {
 		if err != nil {
 			fmt.Println(err)
 		}
-		time.Sleep(10 * time.Millisecond)
+		time.Sleep(100 * time.Millisecond)
 		//update
 		productModel.Price = uint(rand.Intn(100000))
 		err = db.Save(&productModel).Error
 		if err != nil {
 			fmt.Println(err)
 		}
-		time.Sleep(10 * time.Millisecond)
+		time.Sleep(100 * time.Millisecond)
 		//delete
 		err = db.Delete(&productModel).Error
 		if err != nil {
 			fmt.Println(err)
 		}
-		time.Sleep(10 * time.Millisecond)
+		time.Sleep(100 * time.Millisecond)
 	}
 }
