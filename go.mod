@@ -10,6 +10,7 @@ require (
 	github.com/atotto/clipboard v0.1.2
 	github.com/deniswernert/go-fstab v0.0.0-20141204152952-eb4090f26517 // indirect
 	github.com/fedesog/webdriver v0.0.0-20180606182539-99f36c92eaef
+	github.com/gin-gonic/gin v1.6.3
 	github.com/golang/groupcache v0.0.0-20190702054246-869f871628b6
 	github.com/googollee/go-socket.io v1.4.4 // indirect
 	github.com/jinzhu/gorm v1.9.16

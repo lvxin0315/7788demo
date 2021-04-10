@@ -30,7 +30,9 @@ var weeks = []time.Weekday{
 }
 
 const (
-	U1 = "rtmp://xxxx/xxx/xxx"
+	U1 = "rtmp://f.dodool.com.cn/22/57?auth_key=1413753727-0-0-4bc0984d398c4215684dbeb1d6415ee5"
+	U2 = "rtmp://e.dodool.com.cn/22/69?auth_key=1413753727-0-0-6b100ac7e738e4f62b0c1503b5c204f9"
+	U3 = "rtmp://f.dodool.com.cn/22/55?auth_key=1413753727-0-0-5dc093bf911e8937e71023fc71918706"
 )
 
 func pull(url string, filename string) {
@@ -119,7 +121,7 @@ func workTime() {
 	}
 }
 
-func weeksTime() {
+func weeksTime()  {
 	for {
 		week := time.Now().Weekday()
 		for _, ws := range weeks {
@@ -134,5 +136,9 @@ func weeksTime() {
 
 func main() {
 	go start("U1", U1)
-	select {}
+	go start("U2", U2)
+	go start("U3", U3)
+	select {
+
+	}
 }
