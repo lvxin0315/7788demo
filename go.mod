@@ -10,11 +10,12 @@ require (
 	github.com/atotto/clipboard v0.1.2
 	github.com/deniswernert/go-fstab v0.0.0-20141204152952-eb4090f26517 // indirect
 	github.com/fedesog/webdriver v0.0.0-20180606182539-99f36c92eaef
-	github.com/gin-gonic/gin v1.6.3
+	github.com/gin-gonic/gin v1.6.3 // indirect
 	github.com/golang/groupcache v0.0.0-20190702054246-869f871628b6
 	github.com/googollee/go-socket.io v1.4.4 // indirect
 	github.com/jinzhu/gorm v1.9.16
 	github.com/kz26/m3u8 v0.0.0-20141106195857-e50ea99e3925
+	github.com/nats-io/nats.go v1.10.0
 	github.com/olivere/elastic/v7 v7.0.19
 	github.com/panjf2000/ants/v2 v2.4.1
 	github.com/pingcap/errors v0.11.0
