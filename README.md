@@ -16,7 +16,7 @@
 - demo14: 正常服务器信息查询
 - demo15: mysql binlog
 - demo16: 使用cookie发送请求
-- demo17: 
+- demo17: cgo 实验
 - demo18: 下载rtmp内容
 - demo19: nats 实验
 
