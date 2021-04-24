@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"github.com/panjf2000/ants/v2"
 	"math/rand"
-	"sync"
+	"runtime"
 	"time"
 )
 
 //我们做个比较耗时的function，这样能更好的看到执行情况
-func demoFunc(i int) {
+func demoFunc(arg interface{}) {
+	i := arg.(int)
 	//随机延时（单位：毫秒）
 	s := rand.Intn(2000)
 	time.Sleep(time.Duration(s) * time.Millisecond)
@@ -28,22 +29,20 @@ func main() {
 	//release可以释放池
 	defer ants.Release()
 	//执行函数次数
-	runTimes := 200
+	runTimes := 2000
 	//goroutine阻塞，否则我们就看不全结果了
-	var wg sync.WaitGroup
+	//var wg sync.WaitGroup
 	// 设置一下最大协程数，我们的函数需要在匿名函数中调用
-	p, _ := ants.NewPoolWithFunc(16, func(i interface{}) {
-		demoFunc(i.(int))
-		wg.Done()
-	})
+	p, _ := ants.NewPoolWithFunc(128, demoFunc)
 	//挂个监听，看看效果
 	go listenPoolRunningNum(p)
 	defer p.Release()
 	//开始疯狂执行
 	for i := 0; i < runTimes; i++ {
-		wg.Add(1)
+		//wg.Add(1)
 		//这里就是在调用ants.Pool的匿名函数
 		_ = p.Invoke(i)
 	}
-	wg.Wait()
+	//wg.Wait()
+	runtime.Goexit()
 }
