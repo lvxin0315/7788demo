@@ -8,7 +8,7 @@ import (
 const ELApiTpl = `
 import request from '@/utils/request'
 
-export function fetch$moduleNameList(query) {
+export function fetch$funcNameList(query) {
   return request({
     url: '/$routerName/list',
     method: 'get',
@@ -16,7 +16,7 @@ export function fetch$moduleNameList(query) {
   })
 }
 
-export function fetch$moduleName(id) {
+export function fetch$funcName(id) {
   return request({
     url: '/$routerName/detail',
     method: 'get',
@@ -24,7 +24,7 @@ export function fetch$moduleName(id) {
   })
 }
 
-export function create$moduleName(data) {
+export function create$funcName(data) {
   return request({
     url: '/$routerName/create',
     method: 'post',
@@ -32,7 +32,7 @@ export function create$moduleName(data) {
   })
 }
 
-export function update$moduleName(data) {
+export function update$funcName(data) {
   return request({
     url: '/$routerName/update',
     method: 'post',
@@ -40,7 +40,7 @@ export function update$moduleName(data) {
   })
 }
 
-export function delete$moduleName(id) {
+export function delete$funcName(id) {
   return request({
     url: '/$routerName/delete',
     method: 'post',
@@ -58,17 +58,13 @@ export function delete$moduleName(id) {
  * @return
  **/
 type ELApi struct {
-	ModuleName    string
-	camelCaseName string
-	upperName     string
+	ModuleName string
 }
 
 func (el *ELApi) ToString() string {
 	// 首字母大写
-	el.upperName = tools.CamelString(tools.Capitalize(el.ModuleName))
-
 	tpl := ELApiTpl
-	tpl = strings.ReplaceAll(tpl, "$moduleName", el.upperName)
+	tpl = strings.ReplaceAll(tpl, "$funcName", tools.Capitalize(el.ModuleName))
 	tpl = strings.ReplaceAll(tpl, "$routerName", el.ModuleName)
 	return tpl
 }
