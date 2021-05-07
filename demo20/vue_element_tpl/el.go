@@ -35,5 +35,17 @@ type ELTableColumn interface {
 	IsTableColumn() bool
 }
 
+/**
+ * @Author lvxin0315@163.com
+ * @Description vue-element dialog form 元素
+ * @Date 1:35 下午 2021/5/7
+ * @Param
+ * @return
+ **/
+type ELDialogForm interface {
+	EL
+	IsDialogForm() bool
+}
+
 // 默认查询组建的class
 const defaultWhereClass = `filter-item`
