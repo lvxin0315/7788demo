@@ -3,11 +3,11 @@ package vue_element_tpl
 import "strings"
 
 const TableLinkColumnTpl = `
-      <el-table-column label="$title" align="center">
-        <template slot-scope="{row}">
-          <span class="link-type" @click="handleUpdate(row)">{{ row.$field }}</span>
-        </template>
-      </el-table-column>
+		<el-table-column label="$title" align="center">
+			<template slot-scope="{row}">
+				<span class="link-type" @click="handleUpdate(row)">{{ row.$field }}</span>
+			</template>
+		</el-table-column>
 `
 
 type TableLinkColumn struct {

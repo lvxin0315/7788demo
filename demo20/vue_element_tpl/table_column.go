@@ -3,11 +3,11 @@ package vue_element_tpl
 import "strings"
 
 const TableColumnTpl = `
-      <el-table-column label="$title" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.$field }}</span>
-        </template>
-      </el-table-column>
+		<el-table-column label="$title" align="center">
+			<template slot-scope="{row}">
+				<span>{{ row.$field }}</span>
+			</template>
+		</el-table-column>
 `
 
 type TableColumn struct {
