@@ -12,6 +12,13 @@ const ELFilterContainerTpl = `
 </div>
 `
 
+/**
+ * @Author lvxin0315@163.com
+ * @Description 列表查询条件部分
+ * @Date 10:26 上午 2021/5/7
+ * @Param
+ * @return
+ **/
 type ELFilterContainer struct {
 	WhereELList []ELWhere
 	// 存放HTML
