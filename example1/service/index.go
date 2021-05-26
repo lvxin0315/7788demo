@@ -6,8 +6,8 @@ import (
 )
 
 // GetIndexDataService IndexData 首页数据
-func GetIndexDataService() *model.IndexData {
-	return &IndexData
+func GetIndexDataService() model.IndexData {
+	return IndexData
 }
 
 // GetNavService 获取导航
