@@ -31,6 +31,7 @@ require (
 	github.com/siddontang/go-mysql v1.1.0
 	github.com/streadway/amqp v1.0.0
 	github.com/tebeka/selenium v0.9.9
+	github.com/wechatpay-apiv3/wechatpay-go v0.2.9
 	github.com/yanyiwu/gojieba v1.1.2
 	github.com/zhangpeihao/goamf v0.0.0-20140409082417-3ff2c19514a8 // indirect
 	github.com/zhangpeihao/goflv v0.0.0-20140409083800-f2c8a1d6c9e1 // indirect
