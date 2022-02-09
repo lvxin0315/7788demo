@@ -13,9 +13,11 @@ require (
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/fedesog/webdriver v0.0.0-20180606182539-99f36c92eaef
 	github.com/gin-gonic/gin v1.7.7
+	github.com/go-pay/gopay v1.5.69
 	github.com/jinzhu/gorm v1.9.16
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible // indirect
+	github.com/mitchellh/mapstructure v1.1.2
 	github.com/morikuni/aec v1.0.0 // indirect
 	github.com/nats-io/nats-server/v2 v2.6.6 // indirect
 	github.com/nats-io/nats.go v1.13.1-0.20211122170419-d7c1d78a50fc

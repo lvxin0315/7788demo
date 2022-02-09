@@ -25,6 +25,8 @@
 - demo23：proxy 代理实验
 - demo24：微信sdk-扫码支付
 - demo25：根据json生成excel
+- demo26: gopay
+- demo27: mapstructure map与结构体转换
 
 
 #### TODO 
