@@ -27,6 +27,7 @@
 - demo25：根据json生成excel
 - demo26: gopay
 - demo27: mapstructure map与结构体转换
+- demo28: image 图片处理
 
 
 #### TODO 
