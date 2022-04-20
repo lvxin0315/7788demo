@@ -21,7 +21,7 @@
 - demo19: nats 实验
 - demo20: vue-element-admin 模板生成
 - demo21: selenium 实验
-- demo22: docke 客户端实验
+- demo22: docker 客户端实验
 - demo23：proxy 代理实验
 - demo24：微信sdk-扫码支付
 - demo25：根据json生成excel

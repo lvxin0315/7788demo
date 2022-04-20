@@ -5,7 +5,8 @@ go 1.14
 require (
 	fyne.io/fyne v1.3.3
 	github.com/PuerkitoBio/goquery v1.5.1
-	github.com/abema/go-mp4 v0.6.0
+	github.com/abema/go-mp4 v0.6.0 // indirect
+	github.com/aliyun/aliyun-oss-go-sdk v2.2.2+incompatible
 	github.com/asticode/go-astikit v0.9.1
 	github.com/asticode/go-astilectron v0.17.0
 	github.com/atotto/clipboard v0.1.2
@@ -28,6 +29,7 @@ require (
 	github.com/pingcap/errors v0.11.0
 	github.com/q191201771/lal v0.20.0
 	github.com/q191201771/naza v0.18.0
+	github.com/satori/go.uuid v1.2.0
 	github.com/shirou/gopsutil/v3 v3.20.10
 	github.com/siddontang/go-log v0.0.0-20180807004314-8d05993dda07
 	github.com/siddontang/go-mysql v1.1.0
@@ -37,4 +39,6 @@ require (
 	github.com/xuri/excelize/v2 v2.5.0
 	github.com/yanyiwu/gojieba v1.1.2
 	golang.org/x/sys v0.0.0-20211124211545-fe61309f8881 // indirect
+	gorm.io/driver/mysql v1.3.3
+	gorm.io/gorm v1.23.4
 )
