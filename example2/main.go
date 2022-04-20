@@ -31,4 +31,12 @@ func main() {
 		param.YonghuiSellerid = store.SellerId
 		job.YonghuiPicToOss()
 	}
+
+	// TODO
+	//ossClient := utils.NewOssClient()
+	//ossUrl, err := ossClient.UploadUrlFile("http://image.yonghuivip.com/product/B-274840/1585377118592a3f96f110ed8dfa05bfeb03ffdb8b238f5eb7588.jpg")
+	//if err != nil {
+	//	panic(err)
+	//}
+	//fmt.Println(ossUrl)
 }

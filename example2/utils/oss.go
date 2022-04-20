@@ -1,11 +1,11 @@
 package utils
 
 import (
+	"bytes"
 	"github.com/aliyun/aliyun-oss-go-sdk/oss"
 	"github.com/satori/go.uuid"
-	"io/ioutil"
+	"io"
 	"net/http"
-	"os"
 	"path"
 )
 
@@ -17,8 +17,6 @@ const (
 	bucketUrl       = ""
 	bucketDir       = ""
 )
-
-const temp = "./tmp/"
 
 const ossStyleUri = "?x-oss-process=style/index_banner"
 
@@ -39,6 +37,11 @@ func NewOssClient() *OssClient {
 	}
 }
 
+type ossClientReader struct {
+	fileName string
+	reader   io.Reader
+}
+
 type OssClient struct {
 	client *oss.Client
 	bucket *oss.Bucket
@@ -50,11 +53,20 @@ func (o *OssClient) Upload(filePath string) (ossUrl string, err error) {
 	if err != nil {
 		return
 	}
-	ossUrl = bucketUrl + "/" + fileName + ossStyleUri
+	ossUrl = bucketUrl + "/" + bucketDir + "/" + fileName + ossStyleUri
 	return
 }
 
-func (o *OssClient) UploadUrlFile(url string) (ossUrl string, err error) {
+func (o *OssClient) UploadObject(reader ossClientReader) (ossUrl string, err error) {
+	err = o.bucket.PutObject(bucketDir+"/"+reader.fileName, reader.reader)
+	if err != nil {
+		return
+	}
+	ossUrl = bucketUrl + "/" + bucketDir + "/" + reader.fileName + ossStyleUri
+	return
+}
+
+func (o *OssClient) urlToReader(url string) (reader ossClientReader, err error) {
 	// 下载远程文件
 	body, err := HttpHandle(url, http.MethodGet, nil, nil, nil)
 	if err != nil {
@@ -67,16 +79,22 @@ func (o *OssClient) UploadUrlFile(url string) (ossUrl string, err error) {
 	//}
 	// 文件随机名称, 暂时用UUID
 	u := uuid.NewV4()
-	localFilePath := temp + u.String() + ext
-	err = ioutil.WriteFile(localFilePath, body, 0755)
+	reader.fileName = u.String() + ext
+	reader.reader = bytes.NewReader(body)
+	return
+}
 
+func (o *OssClient) UploadUrlFile(url string) (ossUrl string, err error) {
+	// 获取远程文件
+	reader, err := o.urlToReader(url)
+	if err != nil {
+		return
+	}
 	// 开始上传oss
-	ossUrl, err = o.Upload(localFilePath)
+	ossUrl, err = o.UploadObject(reader)
 	if err != nil {
 		return
 	}
 
-	// 删除无用文件
-	_ = os.Remove(localFilePath)
 	return
 }

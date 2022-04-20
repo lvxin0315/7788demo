@@ -36,7 +36,7 @@ func YonghuiPicToOss() {
 
 	// 查询所有数据
 	var goodsList []model.Goods
-	err = db.Model(model.Goods{}).Find(&goodsList).Error
+	err = db.Model(model.Goods{}).Where("`oss_pic` IS NULL").Find(&goodsList).Error
 	if err != nil {
 		panic(err)
 	}
