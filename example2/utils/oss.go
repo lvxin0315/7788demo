@@ -10,12 +10,12 @@ import (
 )
 
 const (
-	endpoint        = "oss-cn-beijing.aliyuncs.com"
-	accessKeyId     = "LTAI4G29MaaWJwTwQbTBdyVE"
-	accessKeySecret = "V2YXPNnDFNJIYAiYvUFlRijzoicYYN"
-	bucketName      = "go-edu"
-	bucketUrl       = "https://go-edu.oss-cn-beijing.aliyuncs.com"
-	bucketDir       = "goods"
+	endpoint        = ""
+	accessKeyId     = ""
+	accessKeySecret = ""
+	bucketName      = ""
+	bucketUrl       = ""
+	bucketDir       = ""
 )
 
 const temp = "./tmp/"
