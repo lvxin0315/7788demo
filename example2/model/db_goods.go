@@ -1,9 +1,15 @@
 package model
 
 import (
-	"github.com/lvxin0315/7788demo/example2/param"
+	"fmt"
 	"gorm.io/gorm"
 )
+
+func NewGoodsModel(yonghuiShopid string) Goods {
+	return Goods{
+		YonghuiShopid: yonghuiShopid,
+	}
+}
 
 type Goods struct {
 	gorm.Model
@@ -22,8 +28,13 @@ type Goods struct {
 
 	OssSliderImage string `json:"oss_slider_image" gorm:"type:text"` // 轮播图(转存oss后地址)
 	OssPic         string `json:"oss_pic"`                           // 主图(转存oss后地址)
+
+	YonghuiShopid string `gorm:"-"`
 }
 
 func (m *Goods) TableName() string {
-	return "pl_goods_" + param.YonghuiShopid
+	if m.YonghuiShopid == "" {
+		return "pl_goods"
+	}
+	return "pl_goods" + fmt.Sprintf("_%s", m.YonghuiShopid)
 }

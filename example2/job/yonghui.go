@@ -61,7 +61,7 @@ func YonghuiData() {
 		// 数据库
 		fmt.Println(category.Categoryname, " 开始入库")
 		for _, goods := range dataList {
-			err = db.Create(&goods).Error
+			err = db.Model(model.NewGoodsModel(param.YonghuiShopid)).Create(&goods).Error
 			if err != nil {
 				fmt.Println("入库error：", err)
 			}
