@@ -29,6 +29,7 @@
 - demo27: mapstructure map与结构体转换
 - demo28: image 图片处理
 - demo29: mp4文件处理
+- demo30: gin上传大文件
 
 #### TODO 
 - 针对产品（商品）的搜索引擎，查询属性：分类、品牌、标题；包含属性：来源url，价格
